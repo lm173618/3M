@@ -4,6 +4,7 @@
                     VERTEX
 ****************************************************/
 
+
 /// Le constructeur met en place les éléments de l'interface
 VertexInterface::VertexInterface(int idx, int x, int y, std::string pic_name, int pic_idx)
 {
@@ -41,6 +42,44 @@ VertexInterface::VertexInterface(int idx, int x, int y, std::string pic_name, in
     m_label_idx.set_message( std::to_string(idx) );
 }
 
+VertexInterface2::VertexInterface2(int idx, int x, int y, std::string pic_name, int pic_idx)
+{
+    // La boite englobante
+    m_top_box.set_pos(x, y);
+    m_top_box.set_dim(86,50);
+    m_top_box.set_border(0);
+
+   /* // Le slider de réglage de valeur
+    m_top_box.add_child( m_slider_value );
+    m_slider_value.set_range(0.0 , 100.0); // Valeurs arbitraires, à adapter...
+    m_slider_value.set_dim(20,80);
+    m_slider_value.set_gravity_xy(grman::GravityX::Left, grman::GravityY::Up);
+*/
+    // Label de visualisation de valeur
+   /* m_top_box.add_child( m_label_value );
+    m_label_value.set_gravity_xy(grman::GravityX::Left, grman::GravityY::Down);
+*/
+    // Une illustration...
+    if (pic_name!="")
+    {
+        m_top_box.add_child( m_bouton);
+        m_bouton.add_child(m_img);
+        m_img.set_pic_name(pic_name);
+        m_bouton.set_gravity_xy(grman::GravityX::Left, grman::GravityY::Up);
+        m_bouton.set_dim(80,50);
+        m_img.set_gravity_xy(grman::GravityX::Center, grman::GravityY::Center);
+
+    }
+ /* // Label de visualisation d'index du sommet dans une boite
+    m_top_box.add_child( m_box_label_idx );
+    m_box_label_idx.set_gravity_xy(grman::GravityX::Right, grman::GravityY::Down);
+    m_box_label_idx.set_dim(20,12);
+    m_box_label_idx.set_bg_color(BLANC);
+
+    m_box_label_idx.add_child( m_label_idx );
+    m_label_idx.set_message( std::to_string(idx) );*/
+}
+
 
 /// Gestion du Vertex avant l'appel à l'interface
 void Vertex::pre_update()
@@ -66,7 +105,31 @@ void Vertex::post_update()
     m_value = m_interface->m_slider_value.get_value();
 }
 
+void Vertex2::update1()
+{
+    if (m_interface->m_bouton.clicked())
+    {
+        if ( m_interface->m_img.get_pic_name() == "ajouter.bmp")
+        {
+         std::cout<<"ok";
+        }
+       /* if ()
+        {
 
+        }
+        if ()
+        {
+
+        }
+        if ()
+        {
+
+        }
+
+        */
+
+    }
+}
 
 /***************************************************
                     EDGE
@@ -136,17 +199,18 @@ void Edge::post_update()
 /// éléments qui seront ensuite ajoutés lors de la mise ne place du Graphe
 GraphInterface::GraphInterface(int x, int y, int w, int h)
 {
-    m_top_box.set_dim(1000,740);
+    m_top_box.set_dim(790,590);
     m_top_box.set_gravity_xy(grman::GravityX::Right, grman::GravityY::Up);
 
+
     m_top_box.add_child(m_tool_box);
-    m_tool_box.set_dim(80,720);
+    m_tool_box.set_dim(785,50);
     m_tool_box.set_gravity_xy(grman::GravityX::Left, grman::GravityY::Up);
     m_tool_box.set_bg_color(BLANCBLEU);
 
     m_top_box.add_child(m_main_box);
-    m_main_box.set_dim(908,720);
-    m_main_box.set_gravity_xy(grman::GravityX::Right, grman::GravityY::Up);
+    m_main_box.set_dim(785,535);
+    m_main_box.set_gravity_xy(grman::GravityX::Left, grman::GravityY::Down);
     m_main_box.set_bg_color(BLANCJAUNE);
 }
 
@@ -164,14 +228,19 @@ void Graph::make_example()
 
     /// Les sommets doivent être définis avant les arcs
     // Ajouter le sommet d'indice 0 de valeur 30 en x=200 et y=100 avec l'image clown1.jpg etc...
-    add_interfaced_vertex(0, 30.0, 200, 100, "clown1.jpg");
+
+
+    //add_interfaced_vertex(0, 30.0, 200, 100, "clown1.jpg");
+     chargement();
     add_interfaced_vertex(1, 60.0, 400, 100, "clown2.jpg");
     add_interfaced_vertex(2,  50.0, 200, 300, "clown3.jpg");
     add_interfaced_vertex(3,  0.0, 400, 300, "clown4.jpg");
-    add_interfaced_vertex(4,  100.0, 600, 300, "clown5.jpg");
+    add_interfaced_vertex(4,  100.0, 600, 300,"clown5.jpg");
     add_interfaced_vertex(5,  0.0, 100, 500, "bad_clowns_xx3xx.jpg", 0);
     add_interfaced_vertex(6,  0.0, 300, 500, "bad_clowns_xx3xx.jpg", 1);
     add_interfaced_vertex(7,  0.0, 500, 500, "bad_clowns_xx3xx.jpg", 2);
+
+
 
     /// Les arcs doivent être définis entre des sommets qui existent !
     // AJouter l'arc d'indice 0, allant du sommet 1 au sommet 2 de poids 50 etc...
@@ -185,6 +254,14 @@ void Graph::make_example()
     add_interfaced_edge(7, 2, 0, 100.0);
     add_interfaced_edge(8, 5, 2, 20.0);
     add_interfaced_edge(9, 3, 7, 80.0);
+    ///image barre d'outils
+
+    add_interfaced_outil(10, 30, 0, 0, "ajouter.bmp");
+    add_interfaced_outil(12, 30.0, 200, 0,"sauvegarder.bmp");
+    add_interfaced_outil(11, 30, 100, 0, "Supprimer.bmp");
+    add_interfaced_outil(13, 30, 300, 0, "chargement.bmp");
+
+
 }
 
 /// La méthode update à appeler dans la boucle de jeu pour les graphes avec interface
@@ -206,6 +283,11 @@ void Graph::update()
 
     for (auto &elt : m_edges)
         elt.second.post_update();
+
+    for (auto &elt : m_outils)
+        elt.second.update1();
+
+
 
 }
 
@@ -244,4 +326,68 @@ void Graph::add_interfaced_edge(int idx, int id_vert1, int id_vert2, double weig
     m_interface->m_main_box.add_child(ei->m_top_edge);
     m_edges[idx] = Edge(weight, ei);
 }
+
+void Graph::add_interfaced_outil(int idx, double value, int x, int y, std::string pic_name, int pic_idx )
+{
+    if ( m_vertices.find(idx)!=m_vertices.end() )
+    {
+        std::cerr << "Error adding vertex at idx=" << idx << " already used..." << std::endl;
+        throw "Error adding vertex";
+    }
+
+    // Création d'une interface de sommet
+    VertexInterface2 *vi = new VertexInterface2(idx, x, y, pic_name, pic_idx);
+    // Ajout de la top box de l'interface de sommet
+    m_interface->m_tool_box.add_child(vi->m_top_box);
+    // On peut ajouter directement des vertices dans la map avec la notation crochet :
+    m_outils[idx] = Vertex2(value, vi);
+}
+
+void Graph::chargement()
+{
+std::string save;
+std::string picname,ligne;
+int idx,value,x,y;
+//std::cout << "Entrez le fichier de sauvegarde";
+//std::cin.clear();
+//std::cin >> save;
+//std::ifstream fichier(save+".txt", std::ios::in); ///on ouvre le fichier en lexture
+std::ifstream fichier("chargement.txt", std::ios::in);
+if (fichier)
+{
+   while (std::getline(fichier,ligne))
+   {
+
+    fichier>>idx;
+    fichier>>value;
+    fichier>>x;
+    fichier>>y;
+    fichier.ignore();
+    std::getline(fichier, picname);
+
+   }
+std::cout<<idx<<std::endl;
+std::cout<<value<<std::endl;
+std::cout<<x<<std::endl;
+std::cout<<y<<std::endl;
+
+std::cout<<picname<<std::endl;
+
+add_interfaced_vertex(idx,  value, x, y,picname);
+
+fichier.close();
+}
+else
+    std::cerr<<"impossible d'ouvrir le fichier"<<std::endl;
+}
+
+void Graph::sauvegarde()
+{
+
+
+
+
+
+}
+
 

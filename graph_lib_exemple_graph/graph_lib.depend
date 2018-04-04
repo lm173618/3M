@@ -1,38 +1,11 @@
 # depslib dependency file v1.0
-1522656553 source:c:\cours_ece\inge_2\theorie_des_graphes\projet\graph_lib_exemple_graph\graph.cpp
-	"graph.h"
-
-1522656089 c:\cours_ece\inge_2\theorie_des_graphes\projet\graph_lib_exemple_graph\graph.h
-	<vector>
-	<map>
-	<string>
-	<memory>
-	"grman/grman.h"
-
-1522539041 c:\cours_ece\inge_2\theorie_des_graphes\projet\graph_lib_exemple_graph\grman\grman.h
-	<allegro.h>
-	<string>
-	"grman_couleurs.h"
+1522795240 source:c:\users\mathi\desktop\graph_lib_v4\graph_lib_exemple_graph\grman\coords.cpp
 	"coords.h"
-	"widget.h"
 
-1509222372 c:\cours_ece\inge_2\theorie_des_graphes\projet\graph_lib_exemple_graph\grman\grman_couleurs.h
-
-1522575424 c:\cours_ece\inge_2\theorie_des_graphes\projet\graph_lib_exemple_graph\grman\coords.h
+1522795240 c:\users\mathi\desktop\graph_lib_v4\graph_lib_exemple_graph\grman\coords.h
 	<cmath>
 
-1522636616 c:\cours_ece\inge_2\theorie_des_graphes\projet\graph_lib_exemple_graph\grman\widget.h
-	"grman.h"
-	<iostream>
-	<string>
-	<vector>
-	<algorithm>
-	<allegro.h>
-
-1522575069 source:c:\cours_ece\inge_2\theorie_des_graphes\projet\graph_lib_exemple_graph\grman\coords.cpp
-	"coords.h"
-
-1522515823 source:c:\cours_ece\inge_2\theorie_des_graphes\projet\graph_lib_exemple_graph\grman\grman.cpp
+1522795240 source:c:\users\mathi\desktop\graph_lib_v4\graph_lib_exemple_graph\grman\grman.cpp
 	<cmath>
 	<unordered_map>
 	<unordered_set>
@@ -46,11 +19,39 @@
 	<loadpng.h>
 	<jpgalleg.h>
 
-1522636919 source:c:\cours_ece\inge_2\theorie_des_graphes\projet\graph_lib_exemple_graph\grman\widget.cpp
+1522795240 c:\users\mathi\desktop\graph_lib_v4\graph_lib_exemple_graph\grman\grman.h
+	<allegro.h>
+	<string>
+	"grman_couleurs.h"
+	"coords.h"
 	"widget.h"
 
-1522657075 source:c:\cours_ece\inge_2\theorie_des_graphes\projet\graph_lib_exemple_graph\main.cpp
+1522795240 c:\users\mathi\desktop\graph_lib_v4\graph_lib_exemple_graph\grman\grman_couleurs.h
+
+1522858896 c:\users\mathi\desktop\graph_lib_v4\graph_lib_exemple_graph\grman\widget.h
+	"grman.h"
+	<iostream>
+	<string>
+	<vector>
+	<algorithm>
+	<allegro.h>
+
+1522795240 source:c:\users\mathi\desktop\graph_lib_v4\graph_lib_exemple_graph\grman\widget.cpp
+	"widget.h"
+
+1522844551 source:c:\users\mathi\desktop\graph_lib_v4\graph_lib_exemple_graph\main.cpp
 	"grman/grman.h"
 	<iostream>
+	"graph.h"
+
+1522857236 c:\users\mathi\desktop\graph_lib_v4\graph_lib_exemple_graph\graph.h
+	<vector>
+	<map>
+	<string>
+	<memory>
+	<fstream>
+	"grman/grman.h"
+
+1522857192 source:c:\users\mathi\desktop\graph_lib_v4\graph_lib_exemple_graph\graph.cpp
 	"graph.h"
 
