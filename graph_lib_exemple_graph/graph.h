@@ -378,7 +378,7 @@ class Graph
         /// La liste des sommets
         std::map<int, Vertex> m_vertices;
 
-        /// La liste des sommets
+        /// La liste des outils
         std::map<int, Outils> m_outils;
 
         /// le POINTEUR sur l'interface associée, nullptr -> pas d'interface
@@ -407,7 +407,7 @@ class Graph
         void add_interfaced_outil(int idx, double value, int x, int y, std::string pic_name="", int pic_idx=0 );
         void test_remove_edge(int eidx);
         void chargement();
-        void sauvegarde();
+        void sauvegarde( std::map<int, Vertex> m_vertices,std::map<int, Edge> m_edges);
 };
 
 

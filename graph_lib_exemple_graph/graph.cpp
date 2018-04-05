@@ -15,7 +15,7 @@ VertexInterface::VertexInterface(int idx, int x, int y, std::string pic_name, in
 
     // Le slider de réglage de valeur
     m_top_box.add_child( m_slider_value );
-    m_slider_value.set_range(0.0 , 100.0); // Valeurs arbitraires, à adapter...
+    m_slider_value.set_range(0.0, 100.0);  // Valeurs arbitraires, à adapter...
     m_slider_value.set_dim(20,80);
     m_slider_value.set_gravity_xy(grman::GravityX::Left, grman::GravityY::Up);
 
@@ -105,10 +105,13 @@ void Outils::update1(Graph *g)
         if ( m_interface->m_img.get_pic_name() == "chargement.bmp")
         {
             std::cout << "Charger!" << std::endl;
+            g->chargement();
         }
         if ( m_interface->m_img.get_pic_name() == "sauvegarder.bmp")
         {
             std::cout << "Sauvegarder!" << std::endl;
+            g->sauvegarde(g->m_vertices,g->m_edges);
+
         }
     }
 }
@@ -138,7 +141,7 @@ EdgeInterface::EdgeInterface(Vertex& from, Vertex& to)
 
     // Le slider de réglage de valeur
     m_box_edge.add_child( m_slider_weight );
-    m_slider_weight.set_range(0.0 , 100.0); // Valeurs arbitraires, à adapter...
+    m_slider_weight.set_range(0.0, 100.0);  // Valeurs arbitraires, à adapter...
     m_slider_weight.set_dim(16,40);
     m_slider_weight.set_gravity_y(grman::GravityY::Up);
 
@@ -215,27 +218,27 @@ void Graph::make_example()
 
     //add_interfaced_vertex(0, 30.0, 200, 100, "clown1.jpg");
     chargement();
-   // add_interfaced_vertex(1, 60.0, 400, 100, "clown2.jpg");
+    // add_interfaced_vertex(1, 60.0, 400, 100, "clown2.jpg");
     //add_interfaced_vertex(2,  50.0, 200, 300, "clown3.jpg");
-   // add_interfaced_vertex(3,  0.0, 400, 300, "clown4.jpg");
+    // add_interfaced_vertex(3,  0.0, 400, 300, "clown4.jpg");
     //add_interfaced_vertex(4,  100.0, 600, 300,"clown5.jpg");
     //add_interfaced_vertex(5,  0.0, 100, 500, "bad_clowns_xx3xx.jpg", 0);
-   // add_interfaced_vertex(6,  0.0, 300, 500, "bad_clowns_xx3xx.jpg", 1);
-   // add_interfaced_vertex(7,  0.0, 500, 500, "bad_clowns_xx3xx.jpg", 2);
+    // add_interfaced_vertex(6,  0.0, 300, 500, "bad_clowns_xx3xx.jpg", 1);
+    // add_interfaced_vertex(7,  0.0, 500, 500, "bad_clowns_xx3xx.jpg", 2);
 
 
 
     /// Les arcs doivent être définis entre des sommets qui existent !
-     // AJouter l'arc d'indice 0, allant du sommet 1 au sommet 2 de poids 50 etc...
-     // add_interfaced_edge(0, 1, 2, 50.0);
+    // AJouter l'arc d'indice 0, allant du sommet 1 au sommet 2 de poids 50 etc...
+    // add_interfaced_edge(0, 1, 2, 50.0);
     //add_interfaced_edge(1, 0, 1, 50.0);
     //add_interfaced_edge(2, 1, 3, 75.0);
     //add_interfaced_edge(3, 4, 1, 25.0);
-   // add_interfaced_edge(4, 6, 3, 25.0);
-   // add_interfaced_edge(5, 7, 3, 25.0);
-   // add_interfaced_edge(6, 3, 4, 0.0);
-   // add_interfaced_edge(7, 2, 0, 100.0);
-   // add_interfaced_edge(8, 5, 2, 20.0);
+    // add_interfaced_edge(4, 6, 3, 25.0);
+    // add_interfaced_edge(5, 7, 3, 25.0);
+    // add_interfaced_edge(6, 3, 4, 0.0);
+    // add_interfaced_edge(7, 2, 0, 100.0);
+    // add_interfaced_edge(8, 5, 2, 20.0);
     //add_interfaced_edge(9, 3, 7, 80.0); */
 
 
@@ -378,73 +381,91 @@ void Graph::test_remove_edge(int eidx)
 
 void Graph::chargement()
 {
-std::string save;
-std::string picname,ligne,ligne2;
-int idx,value,x,y;
-int idx2, id_vert1, id_vert2;
-double weight;
-std::ifstream fichier("chargement.txt", std::ios::in);
-std::ifstream fichier2("arete.txt",std::ios::in);
-if (fichier)
+    std::string save;
+    std::string picname,ligne,ligne2;
+    int idx,value,x,y;
+    int idx2, id_vert1, id_vert2;
+    double weight;
+    std::ifstream fichier("chargement.txt", std::ios::in);
+    if (fichier)
+    {
+        while (std::getline(fichier,ligne))
+        {
+            if (ligne=="a")
+            {
+                fichier>>idx;
+                fichier>>value;
+                fichier>>x;
+                fichier>>y;
+                fichier.ignore();
+                fichier.ignore();
+                std::getline(fichier, picname);
+                add_interfaced_vertex(idx,  value, x, y, picname);
+                std::cout<<idx<<std::endl;
+                std::cout<<value<<std::endl;
+                std::cout<<x<<std::endl;
+                std::cout<<y<<std::endl;
+                std::cout<<picname<<std::endl;
+            }
+            if (ligne=="b")
+            {
+
+                fichier>>idx2;
+                fichier>>id_vert1;
+                fichier>> id_vert2;
+                fichier>>weight;
+                add_interfaced_edge(idx2,id_vert1,id_vert2,weight);
+
+                std::cout<<"idx2:"<<idx2<<std::endl;
+                std::cout<<"idvert1:"<<id_vert1<<std::endl;
+                std::cout<<"idvert2:"<<id_vert2<<std::endl;
+                std::cout<<"weight:"<<weight<<std::endl;
+            }
+
+
+
+        }
+
+        fichier.close();
+
+    }
+    else
+        std::cerr<<"impossible d'ouvrir le fichier"<<std::endl;
+
+}
+
+
+
+void Graph::sauvegarde( std::map<int, Vertex> m_vertices,std::map<int, Edge> m_edges)
 {
-   while (std::getline(fichier,ligne))
-   {
+    std::string chaine;
+    std::cout<<"saisir le nom d'enregistrement du fichier pour les sommets"<<std::endl;
+    std::cin>>chaine;
+    std::ofstream fichier(chaine +".txt", std::ios::out);
 
-    fichier>>idx;
-    fichier>>value;
-    fichier>>x;
-    fichier>>y;
-    fichier.ignore();
-    fichier.ignore();
-    std::getline(fichier, picname);
+    if (fichier)
+    {
+        for (int x=0; x<m_vertices.size();x++)
+        {
+        fichier<<"a";
+        fichier<<m_vertices[x].m_interface->m_box_label_idx.get_message()<<std::endl;
+        fichier<<m_vertices[x].m_value<<std::endl;
+        fichier<<m_vertices[x].m_interface->m_top_box.get_posx()<<std::endl;
+        fichier<<m_vertices[x].m_interface->m_top_box.get_posy()<<std::endl;
+        fichier<<m_vertices[x].m_interface->m_img.get_pic_name()<<std::endl;
+        }
+    for (int x=0; x<m_edges.size();x++)
+    {
+        fichier<<"b"<<std::endl;
+        fichier<<x<<std::endl;
+        fichier<<m_edges[x].m_from<<std::endl;
+        fichier<<m_edges[x].m_to<<std::endl;
+        fichier<<m_edges[x].m_weight<<std::endl;}
 
-add_interfaced_vertex(idx,  value, x, y,picname);
-
-std::cout<<idx<<std::endl;
-std::cout<<value<<std::endl;
-std::cout<<x<<std::endl;
-std::cout<<y<<std::endl;
-std::cout<<picname<<std::endl;
-
-
-   }
-
-fichier.close();
-
-if (fichier2)
-{
-
-   while (std::getline(fichier2,ligne2))
-   {
-
-
-    fichier2>>idx2;
-    fichier2>>id_vert1;
-    fichier2>> id_vert2;
-    fichier2>>weight;
-
-add_interfaced_edge(idx2,id_vert1,id_vert2,weight);
-std::cout<<"idx2:"<<idx2<<std::endl;
-std::cout<<"idvert1:"<<id_vert1<<std::endl;
-std::cout<<"idvert2:"<<id_vert2<<std::endl;
-std::cout<<"weight:"<<weight<<std::endl;
+    }
 
 }
 
-fichier2.close();
-}
-else
-    std::cerr<<"impossible d'ouvrir le fichier"<<std::endl;
-}
-}
 
-void Graph::sauvegarde()
-{
-
-
-
-
-
-}
 
 
