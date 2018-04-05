@@ -121,45 +121,6 @@ class VertexInterface
         VertexInterface(int idx, int x, int y, std::string pic_name="", int pic_idx=0);
 };
 
-class VertexInterface2
-{
-    // Les (methodes des) classes amies pourront accéder
-    // directement aux attributs (y compris privés)
-    friend class Vertex2;
-    friend class EdgeInterface;
-    friend class Graph;
-
-    private :
-
-        /// Les widgets de l'interface. N'oubliez pas qu'il ne suffit pas de déclarer
-        /// ici un widget pour qu'il apparaisse, il faut aussi le mettre en place et
-        /// le paramétrer ( voir l'implémentation du constructeur dans le .cpp )
-
-        // La boite qui contient toute l'interface d'un sommet
-        grman::WidgetBox m_top_box;
-
-        // Un slider de visualisation/modification de la valeur du sommet
-        grman::WidgetVSlider m_slider_value;
-
-        // Un label de visualisation de la valeur du sommet
-        grman::WidgetText m_label_value;
-
-        // Une image de "remplissage"
-        grman::WidgetImage m_img;
-
-        // Un label indiquant l'index du sommet
-        grman::WidgetText m_label_idx;
-
-        grman::WidgetButton m_bouton;
-        // Une boite pour le label précédent
-        grman::WidgetText m_box_label_idx;
-
-    public :
-
-        // Le constructeur met en place les éléments de l'interface
-        // voir l'implémentation dans le .cpp
-        VertexInterface2(int idx, int x, int y, std::string pic_name="", int pic_idx=0);
-};
 
 class Vertex
 {
@@ -204,12 +165,57 @@ class Vertex
         void pre_update();
         void post_update();
 };
-class Vertex2
+
+
+
+class OutilsInterface
+{
+    // Les (methodes des) classes amies pourront accéder
+    // directement aux attributs (y compris privés)
+    friend class Outils;
+    friend class EdgeInterface;
+    friend class Graph;
+
+    private :
+
+        /// Les widgets de l'interface. N'oubliez pas qu'il ne suffit pas de déclarer
+        /// ici un widget pour qu'il apparaisse, il faut aussi le mettre en place et
+        /// le paramétrer ( voir l'implémentation du constructeur dans le .cpp )
+
+        // La boite qui contient toute l'interface d'un sommet
+        grman::WidgetBox m_top_box;
+
+        // Un slider de visualisation/modification de la valeur du sommet
+        grman::WidgetVSlider m_slider_value;
+
+        // Un label de visualisation de la valeur du sommet
+        grman::WidgetText m_label_value;
+
+        // Une image de "remplissage"
+        grman::WidgetImage m_img;
+
+        // Un label indiquant l'index du sommet
+        grman::WidgetText m_label_idx;
+
+        grman::WidgetButton m_bouton;
+        // Une boite pour le label précédent
+        grman::WidgetText m_box_label_idx;
+
+    public :
+
+        // Le constructeur met en place les éléments de l'interface
+        // voir l'implémentation dans le .cpp
+        OutilsInterface(int idx, int x, int y, std::string pic_name="", int pic_idx=0);
+};
+
+
+
+class Outils
 {
     // Les (methodes des) classes amies pourront accéder
     // directement aux attributs (y compris privés)
     friend class Graph;
-    friend class VertexInterface2;
+    friend class OutilsInterface;
     friend class Edge;
     friend class EdgeInterface;
 
@@ -224,7 +230,7 @@ class Vertex2
         double m_value;
 
         /// le POINTEUR sur l'interface associée, nullptr -> pas d'interface
-        std::shared_ptr<VertexInterface2>m_interface = nullptr;
+        std::shared_ptr<OutilsInterface>m_interface = nullptr;
 
 
         // Docu shared_ptr : https://msdn.microsoft.com/fr-fr/library/hh279669.aspx
@@ -235,7 +241,7 @@ class Vertex2
 
         /// Les constructeurs sont à compléter selon vos besoin...
         /// Ici on ne donne qu'un seul constructeur qui peut utiliser une interface
-        Vertex2 (double value=0, VertexInterface2 *interface=nullptr) :
+        Outils (double value=0, OutilsInterface *interface=nullptr) :
             m_value(value), m_interface(interface)  {  }
 
 
@@ -243,8 +249,7 @@ class Vertex2
         /// le pre_update et post_update de Vertex (pas directement la boucle de jeu)
         /// Voir l'implémentation Graph::update dans le .cpp
 
-        void update1();
-
+        void update1(class Graph *g);
 };
 
 
@@ -362,6 +367,9 @@ class GraphInterface
 
 class Graph
 {
+    friend class Outils;
+    friend class OutilsInterface;
+
     private :
 
         /// La "liste" des arêtes
@@ -371,7 +379,7 @@ class Graph
         std::map<int, Vertex> m_vertices;
 
         /// La liste des sommets
-        std::map<int, Vertex2> m_outils;
+        std::map<int, Outils> m_outils;
 
         /// le POINTEUR sur l'interface associée, nullptr -> pas d'interface
         std::shared_ptr<GraphInterface> m_interface = nullptr;
@@ -397,6 +405,7 @@ class Graph
         /// La méthode update à appeler dans la boucle de jeu pour les graphes avec interface
         void update();
         void add_interfaced_outil(int idx, double value, int x, int y, std::string pic_name="", int pic_idx=0 );
+        void test_remove_edge(int eidx);
         void chargement();
         void sauvegarde();
 };

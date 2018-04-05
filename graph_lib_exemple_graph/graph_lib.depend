@@ -55,3 +55,171 @@
 1522857192 source:c:\users\mathi\desktop\graph_lib_v4\graph_lib_exemple_graph\graph.cpp
 	"graph.h"
 
+1522827110 source:c:\users\kipetrovitchy\desktop\mathilde\graph_lib_exemple_graph\grman\coords.cpp
+	"coords.h"
+
+1522827110 c:\users\kipetrovitchy\desktop\mathilde\graph_lib_exemple_graph\grman\coords.h
+	<cmath>
+
+1522827110 source:c:\users\kipetrovitchy\desktop\mathilde\graph_lib_exemple_graph\grman\grman.cpp
+	<cmath>
+	<unordered_map>
+	<unordered_set>
+	<utility>
+	<string>
+	<iostream>
+	<regex>
+	"grman.h"
+	<allegro.h>
+	<png.h>
+	<loadpng.h>
+	<jpgalleg.h>
+
+1522827110 c:\users\kipetrovitchy\desktop\mathilde\graph_lib_exemple_graph\grman\grman.h
+	<allegro.h>
+	<string>
+	"grman_couleurs.h"
+	"coords.h"
+	"widget.h"
+
+1522827110 c:\users\kipetrovitchy\desktop\mathilde\graph_lib_exemple_graph\grman\grman_couleurs.h
+
+1522827110 c:\users\kipetrovitchy\desktop\mathilde\graph_lib_exemple_graph\grman\widget.h
+	"grman.h"
+	<iostream>
+	<string>
+	<vector>
+	<algorithm>
+	<allegro.h>
+
+1522827110 source:c:\users\kipetrovitchy\desktop\mathilde\graph_lib_exemple_graph\grman\widget.cpp
+	"widget.h"
+
+1522827110 source:c:\users\kipetrovitchy\desktop\mathilde\graph_lib_exemple_graph\main.cpp
+	"grman/grman.h"
+	<iostream>
+	"graph.h"
+
+1522882673 c:\users\kipetrovitchy\desktop\mathilde\graph_lib_exemple_graph\graph.h
+	<vector>
+	<map>
+	<string>
+	<memory>
+	<fstream>
+	"grman/grman.h"
+
+1522882895 source:c:\users\kipetrovitchy\desktop\mathilde\graph_lib_exemple_graph\graph.cpp
+	"graph.h"
+
+1522827110 source:c:\users\amerigo\desktop\graph_lib_exemple_graph\grman\coords.cpp
+	"coords.h"
+
+1522827110 c:\users\amerigo\desktop\graph_lib_exemple_graph\grman\coords.h
+	<cmath>
+
+1522827110 source:c:\users\amerigo\desktop\graph_lib_exemple_graph\grman\grman.cpp
+	<cmath>
+	<unordered_map>
+	<unordered_set>
+	<utility>
+	<string>
+	<iostream>
+	<regex>
+	"grman.h"
+	<allegro.h>
+	<png.h>
+	<loadpng.h>
+	<jpgalleg.h>
+
+1522827110 c:\users\amerigo\desktop\graph_lib_exemple_graph\grman\grman.h
+	<allegro.h>
+	<string>
+	"grman_couleurs.h"
+	"coords.h"
+	"widget.h"
+
+1522827110 c:\users\amerigo\desktop\graph_lib_exemple_graph\grman\grman_couleurs.h
+
+1522827110 c:\users\amerigo\desktop\graph_lib_exemple_graph\grman\widget.h
+	"grman.h"
+	<iostream>
+	<string>
+	<vector>
+	<algorithm>
+	<allegro.h>
+
+1522827110 source:c:\users\amerigo\desktop\graph_lib_exemple_graph\grman\widget.cpp
+	"widget.h"
+
+1522827110 source:c:\users\amerigo\desktop\graph_lib_exemple_graph\main.cpp
+	"grman/grman.h"
+	<iostream>
+	"graph.h"
+
+1522919486 c:\users\amerigo\desktop\graph_lib_exemple_graph\graph.h
+	<vector>
+	<map>
+	<string>
+	<memory>
+	<fstream>
+	"grman/grman.h"
+
+1522919723 source:c:\users\amerigo\desktop\graph_lib_exemple_graph\graph.cpp
+	"graph.h"
+
+1522930052 source:c:\users\mathi\desktop\update_fercoq_ajout_sommet\graph.cpp
+	"graph.h"
+
+1522920887 c:\users\mathi\desktop\update_fercoq_ajout_sommet\graph.h
+	<vector>
+	<map>
+	<string>
+	<memory>
+	<fstream>
+	"grman/grman.h"
+
+1522920888 c:\users\mathi\desktop\update_fercoq_ajout_sommet\grman\grman.h
+	<allegro.h>
+	<string>
+	"grman_couleurs.h"
+	"coords.h"
+	"widget.h"
+
+1522920888 c:\users\mathi\desktop\update_fercoq_ajout_sommet\grman\grman_couleurs.h
+
+1522920887 c:\users\mathi\desktop\update_fercoq_ajout_sommet\grman\coords.h
+	<cmath>
+
+1522920888 c:\users\mathi\desktop\update_fercoq_ajout_sommet\grman\widget.h
+	"grman.h"
+	<iostream>
+	<string>
+	<vector>
+	<algorithm>
+	<allegro.h>
+
+1522920887 source:c:\users\mathi\desktop\update_fercoq_ajout_sommet\grman\coords.cpp
+	"coords.h"
+
+1522920888 source:c:\users\mathi\desktop\update_fercoq_ajout_sommet\grman\grman.cpp
+	<cmath>
+	<unordered_map>
+	<unordered_set>
+	<utility>
+	<string>
+	<iostream>
+	<regex>
+	"grman.h"
+	<allegro.h>
+	<png.h>
+	<loadpng.h>
+	<jpgalleg.h>
+
+1522920888 source:c:\users\mathi\desktop\update_fercoq_ajout_sommet\grman\widget.cpp
+	"widget.h"
+
+1522920888 source:c:\users\mathi\desktop\update_fercoq_ajout_sommet\main.cpp
+	"grman/grman.h"
+	<iostream>
+	"graph.h"
+
