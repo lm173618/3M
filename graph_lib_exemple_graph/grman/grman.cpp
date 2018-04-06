@@ -100,6 +100,7 @@ BITMAP *get_picture(std::string pic_name)
             {
                 g_failed_pic_names.insert( pic_name );
                 std::cout << "COULD NOT LOAD " << pic_name << std::endl;
+
             }
             return nullptr;
         }

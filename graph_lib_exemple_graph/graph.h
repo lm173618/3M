@@ -282,6 +282,8 @@ class EdgeInterface
 
         // Un label de visualisation du poids de l'arc
         grman::WidgetText m_label_weight;
+        //Un label pour la visualisation de l'indice de l'arc
+        grman::WidgetText m_label_idx ;
 
     public :
 
@@ -296,6 +298,7 @@ class Edge
     // Les (methodes des) classes amies pourront accéder
     // directement aux attributs (y compris privés)
     friend class Graph;
+    friend class GraphInterface;
     friend class EdgeInterface;
 
 
@@ -308,6 +311,7 @@ class Edge
 
         /// un exemple de donnée associée à l'arc, on peut en ajouter d'autres...
         double m_weight;
+        int m_idx ;
 
         /// le POINTEUR sur l'interface associée, nullptr -> pas d'interface
         std::shared_ptr<EdgeInterface> m_interface = nullptr;
@@ -318,7 +322,7 @@ class Edge
         /// Les constructeurs sont à compléter selon vos besoin...
         /// Ici on ne donne qu'un seul constructeur qui peut utiliser une interface
         Edge (double weight=0, EdgeInterface *interface=nullptr) :
-            m_weight(weight), m_interface(interface)  {  }
+            m_weight(weight), m_interface(interface) { }
 
         /// Edge étant géré par Graph ce sera la méthode update de graph qui appellera
         /// le pre_update et post_update de Edge (pas directement la boucle de jeu)
@@ -369,16 +373,15 @@ class Graph
 {
     friend class Outils;
     friend class OutilsInterface;
+    friend class Edge ;
 
     private :
 
         /// La "liste" des arêtes
         std::map<int, Edge> m_edges;
-
         /// La liste des sommets
         std::map<int, Vertex> m_vertices;
-
-        /// La liste des outils
+        /// La liste des sommets
         std::map<int, Outils> m_outils;
 
         /// le POINTEUR sur l'interface associée, nullptr -> pas d'interface
@@ -405,9 +408,11 @@ class Graph
         /// La méthode update à appeler dans la boucle de jeu pour les graphes avec interface
         void update();
         void add_interfaced_outil(int idx, double value, int x, int y, std::string pic_name="", int pic_idx=0 );
-        void test_remove_edge(int eidx);
+        void test_remove_edge(int eidx);///Enlever une arete
+        void delete_interfaced_vertex(int idx);
         void chargement();
         void sauvegarde( std::map<int, Vertex> m_vertices,std::map<int, Edge> m_edges);
+        void RAZ();
 };
 
 

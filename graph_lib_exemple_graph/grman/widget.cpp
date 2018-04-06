@@ -404,6 +404,4 @@ void WidgetEdge::draw()
 
 }
 
-
-
 }

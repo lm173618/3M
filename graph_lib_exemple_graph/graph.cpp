@@ -66,7 +66,9 @@ void Vertex::post_update()
     /// Reprendre la valeur du slider dans la donnée m_value locale
     m_value = m_interface->m_slider_value.get_value();
 }
-
+/***************************************************
+                    OUTILS
+****************************************************/
 
 OutilsInterface::OutilsInterface(int idx, int x, int y, std::string pic_name, int pic_idx)
 {
@@ -93,28 +95,85 @@ void Outils::update1(Graph *g)
 {
     if (m_interface->m_bouton.clicked())
     {
-        if ( m_interface->m_img.get_pic_name() == "ajouter.bmp")
+        if ( m_interface->m_img.get_pic_name() == "sommet.bmp")
         {
-            g->add_interfaced_vertex(g->m_vertices.size(),  0.0, 100, 100, "bad_clowns_xx3xx.jpg", 2);
-        }
-        if ( m_interface->m_img.get_pic_name() == "Supprimer.bmp")
-        {
-            std::cout << "Supprimer!" << std::endl;
+            std::string pic_name;
+            std::cout<<"Saisissez le nom de l'image : " ;
 
+            std::cin>> pic_name ;
+            std::string path ="pics/"+pic_name;
+            if (load_bitmap(path.c_str(), NULL))
+            {
+                g->add_interfaced_vertex(g->m_vertices.size(), 0.0, 100, 100, pic_name);
+            }
+            else
+            {
+                std::cerr<<"impossible d'ouvrir le fichier"<<std::endl;
+            }
         }
+        if (m_interface->m_img.get_pic_name()=="arc.bmp"&&!g->m_vertices.empty())
+        {
+            unsigned int id_vert1,id_vert2;
+           do
+            {
+                std::cout<<"Saisir le sommet 1 :";
+                std::cin>>id_vert1;
+                std::cout<<"Saisir le sommet 2 :";
+                std::cin>>id_vert2;
+            }while(id_vert1>g->m_vertices.size()-1||id_vert2>g->m_vertices.size()-1);
+
+            g->add_interfaced_edge(g->m_edges.size(),id_vert1,id_vert2,50);
+        }
+        if ( m_interface->m_img.get_pic_name() == "supsommet.bmp"&& !g->m_vertices.empty())
+        {
+
+            unsigned int idx;
+
+            do{
+            std::cout<<"saisir l'indice du sommet :";
+            std::cin>>idx;
+            }while(idx>g->m_vertices.size()-1);
+
+            g->delete_interfaced_vertex(idx);
+            std::cout<<"sommet numero "<<idx<<" supprime"<<std::endl;
+        }
+
+
+
+        if(m_interface->m_img.get_pic_name()=="suparc.bmp"&&!g->m_edges.empty())
+        {
+          unsigned int eidx;
+           do{
+                std::cout<<"saisir l'indice de l'arrete :";
+                std::cin>>eidx;
+             } while(eidx>g->m_edges.size()-1);
+
+            g->test_remove_edge(eidx);
+            std::cout<<"arrete numero "<<eidx<<" supprime"<<std::endl;
+        }
+
         if ( m_interface->m_img.get_pic_name() == "chargement.bmp")
         {
             std::cout << "Charger!" << std::endl;
-            g->chargement();
+            if(g->m_vertices.empty()||g->m_edges.empty())///Si le graphe n'est pas instancié
+            {
+                g->chargement();///On l'instancie
+            }
+            else
+            {
+                g->RAZ();
+                g->chargement();
+            }
         }
         if ( m_interface->m_img.get_pic_name() == "sauvegarder.bmp")
         {
             std::cout << "Sauvegarder!" << std::endl;
             g->sauvegarde(g->m_vertices,g->m_edges);
-
         }
     }
 }
+
+
 
 
 /***************************************************
@@ -136,19 +195,22 @@ EdgeInterface::EdgeInterface(Vertex& from, Vertex& to)
 
     // Une boite pour englober les widgets de réglage associés
     m_top_edge.add_child(m_box_edge);
-    m_box_edge.set_dim(24,60);
+    m_box_edge.set_dim(50,70);
     m_box_edge.set_bg_color(BLANCBLEU);
 
     // Le slider de réglage de valeur
     m_box_edge.add_child( m_slider_weight );
     m_slider_weight.set_range(0.0, 100.0);  // Valeurs arbitraires, à adapter...
-    m_slider_weight.set_dim(16,40);
+    m_slider_weight.set_dim(16,50);
     m_slider_weight.set_gravity_y(grman::GravityY::Up);
 
     // Label de visualisation de valeur
     m_box_edge.add_child( m_label_weight );
-    m_label_weight.set_gravity_y(grman::GravityY::Down);
+    m_label_weight.set_gravity_xy(grman::GravityX::Left,grman::GravityY::Down);
 
+    //Label de visualisation de l'indice de l'arete
+    m_box_edge.add_child(m_label_idx);
+    m_label_idx.set_gravity_xy(grman::GravityX::Right,grman::GravityY::Down);
 }
 
 
@@ -160,9 +222,9 @@ void Edge::pre_update()
 
     /// Copier la valeur locale de la donnée m_weight vers le slider associé
     m_interface->m_slider_weight.set_value(m_weight);
-
     /// Copier la valeur locale de la donnée m_weight vers le label sous le slider
     m_interface->m_label_weight.set_message( std::to_string( (int)m_weight ) );
+    m_interface->m_label_idx.set_message( std::to_string( (int)m_idx ) );
 }
 
 /// Gestion du Edge après l'appel à l'interface
@@ -217,37 +279,38 @@ void Graph::make_example()
 
 
     //add_interfaced_vertex(0, 30.0, 200, 100, "clown1.jpg");
-    chargement();
-    // add_interfaced_vertex(1, 60.0, 400, 100, "clown2.jpg");
-    //add_interfaced_vertex(2,  50.0, 200, 300, "clown3.jpg");
-    // add_interfaced_vertex(3,  0.0, 400, 300, "clown4.jpg");
-    //add_interfaced_vertex(4,  100.0, 600, 300,"clown5.jpg");
-    //add_interfaced_vertex(5,  0.0, 100, 500, "bad_clowns_xx3xx.jpg", 0);
-    // add_interfaced_vertex(6,  0.0, 300, 500, "bad_clowns_xx3xx.jpg", 1);
-    // add_interfaced_vertex(7,  0.0, 500, 500, "bad_clowns_xx3xx.jpg", 2);
+    // chargement();
+    /*add_interfaced_vertex(1, 60.0, 400, 100, "clown2.jpg");
+    add_interfaced_vertex(2,  50.0, 200, 300, "clown3.jpg");
+    add_interfaced_vertex(3,  0.0, 400, 300, "clown4.jpg");
+    add_interfaced_vertex(4,  100.0, 600, 300,"clown5.jpg");
+    add_interfaced_vertex(5,  0.0, 100, 500, "bad_clowns_xx3xx.jpg", 0);
+    add_interfaced_vertex(6,  0.0, 300, 500, "bad_clowns_xx3xx.jpg", 1);
+    add_interfaced_vertex(7,  0.0, 500, 500, "bad_clowns_xx3xx.jpg", 2);
 
 
 
     /// Les arcs doivent être définis entre des sommets qui existent !
     // AJouter l'arc d'indice 0, allant du sommet 1 au sommet 2 de poids 50 etc...
-    // add_interfaced_edge(0, 1, 2, 50.0);
-    //add_interfaced_edge(1, 0, 1, 50.0);
-    //add_interfaced_edge(2, 1, 3, 75.0);
-    //add_interfaced_edge(3, 4, 1, 25.0);
-    // add_interfaced_edge(4, 6, 3, 25.0);
-    // add_interfaced_edge(5, 7, 3, 25.0);
-    // add_interfaced_edge(6, 3, 4, 0.0);
-    // add_interfaced_edge(7, 2, 0, 100.0);
-    // add_interfaced_edge(8, 5, 2, 20.0);
-    //add_interfaced_edge(9, 3, 7, 80.0); */
-
+    add_interfaced_edge(0, 1, 2, 50.0);
+    add_interfaced_edge(1, 0, 1, 50.0);
+    add_interfaced_edge(2, 1, 3, 75.0);
+    add_interfaced_edge(3, 4, 1, 25.0);
+    add_interfaced_edge(4, 6, 3, 25.0);
+    add_interfaced_edge(5, 7, 3, 25.0);
+    add_interfaced_edge(6, 3, 4, 0.0);
+    add_interfaced_edge(7, 2, 0, 100.0);
+    add_interfaced_edge(8, 5, 2, 20.0);
+    add_interfaced_edge(9, 3, 7, 80.0);
+    */
 
     ///image barre d'outils
-    add_interfaced_outil(10, 30, 0, 0, "ajouter.bmp");
-    add_interfaced_outil(12, 30.0, 200, 0,"sauvegarder.bmp");
-    add_interfaced_outil(11, 30, 100, 0, "Supprimer.bmp");
-    add_interfaced_outil(13, 30, 300, 0, "chargement.bmp");
-
+    add_interfaced_outil(100, 30, 0, 0, "sommet.bmp");
+    add_interfaced_outil(101, 30.0, 200, 0,"supsommet.bmp");
+    add_interfaced_outil(102, 30, 100, 0, "arc.bmp");
+    add_interfaced_outil(103, 30, 300, 0, "suparc.bmp");
+    add_interfaced_outil(14,30,400,0,"sauvegarder.bmp");
+    add_interfaced_outil(104,30,500,0,"chargement.bmp");
 
 }
 
@@ -274,7 +337,22 @@ void Graph::update()
     for (auto &elt : m_outils)
         elt.second.update1(this);
 }
-
+void Graph::delete_interfaced_vertex(int idx)
+{
+    Vertex remed=m_vertices.at(idx);
+    if (m_interface && remed.m_interface)
+    {
+        /// Ne pas oublier qu'on a fait ça à l'ajout de l'arc :
+        /* EdgeInterface *ei = new EdgeInterface(m_vertices[id_vert1], m_vertices[id_vert2]); */
+        /* m_interface->m_main_box.add_child(ei->m_top_edge);  */
+        /* m_edges[idx] = Edge(weight, ei); */
+        /// Le new EdgeInterface ne nécessite pas de delete car on a un shared_ptr
+        /// Le Edge ne nécessite pas non plus de delete car on n'a pas fait de new (sémantique par valeur)
+        /// mais il faut bien enlever le conteneur d'interface m_top_edge de l'arc de la main_box du graphe
+        m_interface->m_main_box.remove_child( remed.m_interface->m_top_box );
+    }
+    m_vertices.erase(idx);
+}
 /// Aide à l'ajout de sommets interfacés
 void Graph::add_interfaced_vertex(int idx, double value, int x, int y, std::string pic_name, int pic_idx )
 {
@@ -312,6 +390,7 @@ void Graph::add_interfaced_edge(int idx, int id_vert1, int id_vert2, double weig
     /// OOOPS ! Prendre en compte l'arc ajouté dans la topologie du graphe !
     m_edges[idx].m_from = id_vert1;
     m_edges[idx].m_to = id_vert2;
+    m_edges[idx].m_idx = idx;
 
     m_vertices[id_vert1].m_out.push_back(id_vert2);
     m_vertices[id_vert2].m_in.push_back(id_vert1);
@@ -379,14 +458,18 @@ void Graph::test_remove_edge(int eidx)
 
 }
 
+
 void Graph::chargement()
 {
+    std::string choice;
     std::string save;
     std::string picname,ligne,ligne2;
     int idx,value,x,y;
     int idx2, id_vert1, id_vert2;
     double weight;
-    std::ifstream fichier("chargement.txt", std::ios::in);
+    std::cout<<" Quel graphe voulez-vous charger ? ";
+    std::cin>> choice ;
+    std::ifstream fichier(choice+".txt", std::ios::in);
     if (fichier)
     {
         while (std::getline(fichier,ligne))
@@ -398,7 +481,6 @@ void Graph::chargement()
                 fichier>>x;
                 fichier>>y;
                 fichier.ignore();
-                fichier.ignore();
                 std::getline(fichier, picname);
                 add_interfaced_vertex(idx,  value, x, y, picname);
                 std::cout<<idx<<std::endl;
@@ -409,7 +491,6 @@ void Graph::chargement()
             }
             if (ligne=="b")
             {
-
                 fichier>>idx2;
                 fichier>>id_vert1;
                 fichier>> id_vert2;
@@ -421,20 +502,12 @@ void Graph::chargement()
                 std::cout<<"idvert2:"<<id_vert2<<std::endl;
                 std::cout<<"weight:"<<weight<<std::endl;
             }
-
-
-
         }
-
         fichier.close();
-
     }
     else
         std::cerr<<"impossible d'ouvrir le fichier"<<std::endl;
-
 }
-
-
 
 void Graph::sauvegarde( std::map<int, Vertex> m_vertices,std::map<int, Edge> m_edges)
 {
@@ -445,27 +518,41 @@ void Graph::sauvegarde( std::map<int, Vertex> m_vertices,std::map<int, Edge> m_e
 
     if (fichier)
     {
-        for (int x=0; x<m_vertices.size();x++)
+        for (unsigned int x=0; x<m_vertices.size(); x++)
         {
-        fichier<<"a";
-        fichier<<m_vertices[x].m_interface->m_box_label_idx.get_message()<<std::endl;
-        fichier<<m_vertices[x].m_value<<std::endl;
-        fichier<<m_vertices[x].m_interface->m_top_box.get_posx()<<std::endl;
-        fichier<<m_vertices[x].m_interface->m_top_box.get_posy()<<std::endl;
-        fichier<<m_vertices[x].m_interface->m_img.get_pic_name()<<std::endl;
+            fichier<<"a"<<std::endl;
+            fichier<<m_vertices[x].m_interface->m_label_idx.get_message()<<std::endl;// Pb à la sauvegarde
+            fichier<<m_vertices[x].m_value<<std::endl;
+            fichier<<m_vertices[x].m_interface->m_top_box.get_posx()<<std::endl;
+            fichier<<m_vertices[x].m_interface->m_top_box.get_posy()<<std::endl;
+            fichier<<m_vertices[x].m_interface->m_img.get_pic_name()<<std::endl;
         }
-    for (int x=0; x<m_edges.size();x++)
-    {
-        fichier<<"b"<<std::endl;
-        fichier<<x<<std::endl;
-        fichier<<m_edges[x].m_from<<std::endl;
-        fichier<<m_edges[x].m_to<<std::endl;
-        fichier<<m_edges[x].m_weight<<std::endl;}
+        for (unsigned int x=0; x<m_edges.size(); x++)
+        {
+            fichier<<"b"<<std::endl;
+            fichier<<x<<std::endl;
+            fichier<<m_edges[x].m_from<<std::endl;
+            fichier<<m_edges[x].m_to<<std::endl;
+            fichier<<m_edges[x].m_weight<<std::endl;
+        }
 
     }
 
 }
+void Graph::RAZ()
+{
+    int j = m_edges.size();
 
-
+   int i;
+    for(i=0 ; i<j; i++)
+    {
+        test_remove_edge(i);
+    }
+    j = m_vertices.size();
+    for(i=0 ; i<j; i++)
+    {
+        delete_interfaced_vertex(i);
+    }
+}
 
 
