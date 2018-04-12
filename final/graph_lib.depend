@@ -1,0 +1,674 @@
+# depslib dependency file v1.0
+1522795240 source:c:\users\mathi\desktop\graph_lib_v4\graph_lib_exemple_graph\grman\coords.cpp
+	"coords.h"
+
+1522795240 c:\users\mathi\desktop\graph_lib_v4\graph_lib_exemple_graph\grman\coords.h
+	<cmath>
+
+1522795240 source:c:\users\mathi\desktop\graph_lib_v4\graph_lib_exemple_graph\grman\grman.cpp
+	<cmath>
+	<unordered_map>
+	<unordered_set>
+	<utility>
+	<string>
+	<iostream>
+	<regex>
+	"grman.h"
+	<allegro.h>
+	<png.h>
+	<loadpng.h>
+	<jpgalleg.h>
+
+1522795240 c:\users\mathi\desktop\graph_lib_v4\graph_lib_exemple_graph\grman\grman.h
+	<allegro.h>
+	<string>
+	"grman_couleurs.h"
+	"coords.h"
+	"widget.h"
+
+1522795240 c:\users\mathi\desktop\graph_lib_v4\graph_lib_exemple_graph\grman\grman_couleurs.h
+
+1522858896 c:\users\mathi\desktop\graph_lib_v4\graph_lib_exemple_graph\grman\widget.h
+	"grman.h"
+	<iostream>
+	<string>
+	<vector>
+	<algorithm>
+	<allegro.h>
+
+1522795240 source:c:\users\mathi\desktop\graph_lib_v4\graph_lib_exemple_graph\grman\widget.cpp
+	"widget.h"
+
+1522844551 source:c:\users\mathi\desktop\graph_lib_v4\graph_lib_exemple_graph\main.cpp
+	"grman/grman.h"
+	<iostream>
+	"graph.h"
+
+1522857236 c:\users\mathi\desktop\graph_lib_v4\graph_lib_exemple_graph\graph.h
+	<vector>
+	<map>
+	<string>
+	<memory>
+	<fstream>
+	"grman/grman.h"
+
+1522857192 source:c:\users\mathi\desktop\graph_lib_v4\graph_lib_exemple_graph\graph.cpp
+	"graph.h"
+
+1522827110 source:c:\users\kipetrovitchy\desktop\mathilde\graph_lib_exemple_graph\grman\coords.cpp
+	"coords.h"
+
+1522827110 c:\users\kipetrovitchy\desktop\mathilde\graph_lib_exemple_graph\grman\coords.h
+	<cmath>
+
+1522827110 source:c:\users\kipetrovitchy\desktop\mathilde\graph_lib_exemple_graph\grman\grman.cpp
+	<cmath>
+	<unordered_map>
+	<unordered_set>
+	<utility>
+	<string>
+	<iostream>
+	<regex>
+	"grman.h"
+	<allegro.h>
+	<png.h>
+	<loadpng.h>
+	<jpgalleg.h>
+
+1522827110 c:\users\kipetrovitchy\desktop\mathilde\graph_lib_exemple_graph\grman\grman.h
+	<allegro.h>
+	<string>
+	"grman_couleurs.h"
+	"coords.h"
+	"widget.h"
+
+1522827110 c:\users\kipetrovitchy\desktop\mathilde\graph_lib_exemple_graph\grman\grman_couleurs.h
+
+1522827110 c:\users\kipetrovitchy\desktop\mathilde\graph_lib_exemple_graph\grman\widget.h
+	"grman.h"
+	<iostream>
+	<string>
+	<vector>
+	<algorithm>
+	<allegro.h>
+
+1522827110 source:c:\users\kipetrovitchy\desktop\mathilde\graph_lib_exemple_graph\grman\widget.cpp
+	"widget.h"
+
+1522827110 source:c:\users\kipetrovitchy\desktop\mathilde\graph_lib_exemple_graph\main.cpp
+	"grman/grman.h"
+	<iostream>
+	"graph.h"
+
+1522882673 c:\users\kipetrovitchy\desktop\mathilde\graph_lib_exemple_graph\graph.h
+	<vector>
+	<map>
+	<string>
+	<memory>
+	<fstream>
+	"grman/grman.h"
+
+1522882895 source:c:\users\kipetrovitchy\desktop\mathilde\graph_lib_exemple_graph\graph.cpp
+	"graph.h"
+
+1522827110 source:c:\users\amerigo\desktop\graph_lib_exemple_graph\grman\coords.cpp
+	"coords.h"
+
+1522827110 c:\users\amerigo\desktop\graph_lib_exemple_graph\grman\coords.h
+	<cmath>
+
+1522827110 source:c:\users\amerigo\desktop\graph_lib_exemple_graph\grman\grman.cpp
+	<cmath>
+	<unordered_map>
+	<unordered_set>
+	<utility>
+	<string>
+	<iostream>
+	<regex>
+	"grman.h"
+	<allegro.h>
+	<png.h>
+	<loadpng.h>
+	<jpgalleg.h>
+
+1522827110 c:\users\amerigo\desktop\graph_lib_exemple_graph\grman\grman.h
+	<allegro.h>
+	<string>
+	"grman_couleurs.h"
+	"coords.h"
+	"widget.h"
+
+1522827110 c:\users\amerigo\desktop\graph_lib_exemple_graph\grman\grman_couleurs.h
+
+1522827110 c:\users\amerigo\desktop\graph_lib_exemple_graph\grman\widget.h
+	"grman.h"
+	<iostream>
+	<string>
+	<vector>
+	<algorithm>
+	<allegro.h>
+
+1522827110 source:c:\users\amerigo\desktop\graph_lib_exemple_graph\grman\widget.cpp
+	"widget.h"
+
+1522827110 source:c:\users\amerigo\desktop\graph_lib_exemple_graph\main.cpp
+	"grman/grman.h"
+	<iostream>
+	"graph.h"
+
+1522919486 c:\users\amerigo\desktop\graph_lib_exemple_graph\graph.h
+	<vector>
+	<map>
+	<string>
+	<memory>
+	<fstream>
+	"grman/grman.h"
+
+1522919723 source:c:\users\amerigo\desktop\graph_lib_exemple_graph\graph.cpp
+	"graph.h"
+
+1523019537 source:c:\projet\3m\graph_lib_exemple_graph\graph.cpp
+	"graph.h"
+
+1523007489 c:\projet\3m\graph_lib_exemple_graph\graph.h
+	<vector>
+	<map>
+	<string>
+	<memory>
+	<fstream>
+	"grman/grman.h"
+
+1522827110 c:\projet\3m\graph_lib_exemple_graph\grman\grman.h
+	<allegro.h>
+	<string>
+	"grman_couleurs.h"
+	"coords.h"
+	"widget.h"
+
+1522827110 c:\projet\3m\graph_lib_exemple_graph\grman\grman_couleurs.h
+
+1522827110 c:\projet\3m\graph_lib_exemple_graph\grman\coords.h
+	<cmath>
+
+1522827110 c:\projet\3m\graph_lib_exemple_graph\grman\widget.h
+	"grman.h"
+	<iostream>
+	<string>
+	<vector>
+	<algorithm>
+	<allegro.h>
+
+1522827110 source:c:\projet\3m\graph_lib_exemple_graph\grman\coords.cpp
+	"coords.h"
+
+1522827110 source:c:\projet\3m\graph_lib_exemple_graph\grman\grman.cpp
+	<cmath>
+	<unordered_map>
+	<unordered_set>
+	<utility>
+	<string>
+	<iostream>
+	<regex>
+	"grman.h"
+	<allegro.h>
+	<png.h>
+	<loadpng.h>
+	<jpgalleg.h>
+
+1522827110 source:c:\projet\3m\graph_lib_exemple_graph\grman\widget.cpp
+	"widget.h"
+
+1522827110 source:c:\projet\3m\graph_lib_exemple_graph\main.cpp
+	"grman/grman.h"
+	<iostream>
+	"graph.h"
+
+1523022671 source:c:\users\guizm\desktop\debug_sauvegarde\graph.cpp
+	"graph.h"
+
+1523019941 c:\users\guizm\desktop\debug_sauvegarde\graph.h
+	<vector>
+	<map>
+	<string>
+	<memory>
+	<fstream>
+	"grman/grman.h"
+
+1523019943 c:\users\guizm\desktop\debug_sauvegarde\grman\grman.h
+	<allegro.h>
+	<string>
+	"grman_couleurs.h"
+	"coords.h"
+	"widget.h"
+
+1523019943 c:\users\guizm\desktop\debug_sauvegarde\grman\grman_couleurs.h
+
+1523019943 c:\users\guizm\desktop\debug_sauvegarde\grman\coords.h
+	<cmath>
+
+1523019944 c:\users\guizm\desktop\debug_sauvegarde\grman\widget.h
+	"grman.h"
+	<iostream>
+	<string>
+	<vector>
+	<algorithm>
+	<allegro.h>
+
+1523019943 source:c:\users\guizm\desktop\debug_sauvegarde\grman\coords.cpp
+	"coords.h"
+
+1523019943 source:c:\users\guizm\desktop\debug_sauvegarde\grman\grman.cpp
+	<cmath>
+	<unordered_map>
+	<unordered_set>
+	<utility>
+	<string>
+	<iostream>
+	<regex>
+	"grman.h"
+	<allegro.h>
+	<png.h>
+	<loadpng.h>
+	<jpgalleg.h>
+
+1523019944 source:c:\users\guizm\desktop\debug_sauvegarde\grman\widget.cpp
+	"widget.h"
+
+1523019944 source:c:\users\guizm\desktop\debug_sauvegarde\main.cpp
+	"grman/grman.h"
+	<iostream>
+	"graph.h"
+
+1523024601 source:c:\users\mathi\desktop\3m-ft_marine\3m-ft_marine\graph_lib_exemple_graph\graph.cpp
+	"graph.h"
+
+1523024601 c:\users\mathi\desktop\3m-ft_marine\3m-ft_marine\graph_lib_exemple_graph\graph.h
+	<vector>
+	<map>
+	<string>
+	<memory>
+	<fstream>
+	"grman/grman.h"
+
+1523024602 c:\users\mathi\desktop\3m-ft_marine\3m-ft_marine\graph_lib_exemple_graph\grman\grman.h
+	<allegro.h>
+	<string>
+	"grman_couleurs.h"
+	"coords.h"
+	"widget.h"
+
+1523024602 c:\users\mathi\desktop\3m-ft_marine\3m-ft_marine\graph_lib_exemple_graph\grman\grman_couleurs.h
+
+1523024602 c:\users\mathi\desktop\3m-ft_marine\3m-ft_marine\graph_lib_exemple_graph\grman\coords.h
+	<cmath>
+
+1523024602 c:\users\mathi\desktop\3m-ft_marine\3m-ft_marine\graph_lib_exemple_graph\grman\widget.h
+	"grman.h"
+	<iostream>
+	<string>
+	<vector>
+	<algorithm>
+	<allegro.h>
+
+1523024602 source:c:\users\mathi\desktop\3m-ft_marine\3m-ft_marine\graph_lib_exemple_graph\grman\coords.cpp
+	"coords.h"
+
+1523024602 source:c:\users\mathi\desktop\3m-ft_marine\3m-ft_marine\graph_lib_exemple_graph\grman\grman.cpp
+	<cmath>
+	<unordered_map>
+	<unordered_set>
+	<utility>
+	<string>
+	<iostream>
+	<regex>
+	"grman.h"
+	<allegro.h>
+	<png.h>
+	<loadpng.h>
+	<jpgalleg.h>
+
+1523024602 source:c:\users\mathi\desktop\3m-ft_marine\3m-ft_marine\graph_lib_exemple_graph\grman\widget.cpp
+	"widget.h"
+
+1523024602 source:c:\users\mathi\desktop\3m-ft_marine\3m-ft_marine\graph_lib_exemple_graph\main.cpp
+	"grman/grman.h"
+	<iostream>
+	"graph.h"
+
+1523092042 source:c:\users\mathi\desktop\3m\3m\graph_lib_exemple_graph\graph.cpp
+	"graph.h"
+
+1523051795 c:\users\mathi\desktop\3m\3m\graph_lib_exemple_graph\graph.h
+	<vector>
+	<map>
+	<string>
+	<memory>
+	<fstream>
+	"grman/grman.h"
+
+1523024602 c:\users\mathi\desktop\3m\3m\graph_lib_exemple_graph\grman\grman.h
+	<allegro.h>
+	<string>
+	"grman_couleurs.h"
+	"coords.h"
+	"widget.h"
+
+1523024602 c:\users\mathi\desktop\3m\3m\graph_lib_exemple_graph\grman\grman_couleurs.h
+
+1523024602 c:\users\mathi\desktop\3m\3m\graph_lib_exemple_graph\grman\coords.h
+	<cmath>
+
+1523024602 c:\users\mathi\desktop\3m\3m\graph_lib_exemple_graph\grman\widget.h
+	"grman.h"
+	<iostream>
+	<string>
+	<vector>
+	<algorithm>
+	<allegro.h>
+
+1523024602 source:c:\users\mathi\desktop\3m\3m\graph_lib_exemple_graph\grman\coords.cpp
+	"coords.h"
+
+1523044101 source:c:\users\mathi\desktop\3m\3m\graph_lib_exemple_graph\grman\grman.cpp
+	<cmath>
+	<unordered_map>
+	<unordered_set>
+	<utility>
+	<string>
+	<iostream>
+	<regex>
+	"grman.h"
+	<allegro.h>
+	<png.h>
+	<loadpng.h>
+	<jpgalleg.h>
+
+1523032571 source:c:\users\mathi\desktop\3m\3m\graph_lib_exemple_graph\grman\widget.cpp
+	"widget.h"
+
+1523024602 source:c:\users\mathi\desktop\3m\3m\graph_lib_exemple_graph\main.cpp
+	"grman/grman.h"
+	<iostream>
+	"graph.h"
+
+1523202121 source:c:\users\guizm\desktop\graph_lib_exemple_graph\graph_lib_exemple_graph\graph.cpp
+	"graph.h"
+
+1523206546 c:\users\guizm\desktop\graph_lib_exemple_graph\graph_lib_exemple_graph\graph.h
+	<vector>
+	<map>
+	<string>
+	<memory>
+	<fstream>
+	"grman/grman.h"
+
+1523092894 c:\users\guizm\desktop\graph_lib_exemple_graph\graph_lib_exemple_graph\grman\grman.h
+	<allegro.h>
+	<string>
+	"grman_couleurs.h"
+	"coords.h"
+	"widget.h"
+
+1523092894 c:\users\guizm\desktop\graph_lib_exemple_graph\graph_lib_exemple_graph\grman\grman_couleurs.h
+
+1523092894 c:\users\guizm\desktop\graph_lib_exemple_graph\graph_lib_exemple_graph\grman\coords.h
+	<cmath>
+
+1523092895 c:\users\guizm\desktop\graph_lib_exemple_graph\graph_lib_exemple_graph\grman\widget.h
+	"grman.h"
+	<iostream>
+	<string>
+	<vector>
+	<algorithm>
+	<allegro.h>
+
+1523092894 source:c:\users\guizm\desktop\graph_lib_exemple_graph\graph_lib_exemple_graph\grman\coords.cpp
+	"coords.h"
+
+1523092894 source:c:\users\guizm\desktop\graph_lib_exemple_graph\graph_lib_exemple_graph\grman\grman.cpp
+	<cmath>
+	<unordered_map>
+	<unordered_set>
+	<utility>
+	<string>
+	<iostream>
+	<regex>
+	"grman.h"
+	<allegro.h>
+	<png.h>
+	<loadpng.h>
+	<jpgalleg.h>
+
+1523092895 source:c:\users\guizm\desktop\graph_lib_exemple_graph\graph_lib_exemple_graph\grman\widget.cpp
+	"widget.h"
+
+1523092893 source:c:\users\guizm\desktop\graph_lib_exemple_graph\graph_lib_exemple_graph\main.cpp
+	"grman/grman.h"
+	<iostream>
+	"graph.h"
+
+1523206857 source:c:\users\mathi\desktop\graph_lib_exemple_graph\graph_lib_exemple_graph\graph_lib_exemple_graph\grman\coords.cpp
+	"coords.h"
+
+1523206857 c:\users\mathi\desktop\graph_lib_exemple_graph\graph_lib_exemple_graph\graph_lib_exemple_graph\grman\coords.h
+	<cmath>
+
+1523206857 source:c:\users\mathi\desktop\graph_lib_exemple_graph\graph_lib_exemple_graph\graph_lib_exemple_graph\grman\grman.cpp
+	<cmath>
+	<unordered_map>
+	<unordered_set>
+	<utility>
+	<string>
+	<iostream>
+	<regex>
+	"grman.h"
+	<allegro.h>
+	<png.h>
+	<loadpng.h>
+	<jpgalleg.h>
+
+1523206857 c:\users\mathi\desktop\graph_lib_exemple_graph\graph_lib_exemple_graph\graph_lib_exemple_graph\grman\grman.h
+	<allegro.h>
+	<string>
+	"grman_couleurs.h"
+	"coords.h"
+	"widget.h"
+
+1523206857 c:\users\mathi\desktop\graph_lib_exemple_graph\graph_lib_exemple_graph\graph_lib_exemple_graph\grman\grman_couleurs.h
+
+1523206858 c:\users\mathi\desktop\graph_lib_exemple_graph\graph_lib_exemple_graph\graph_lib_exemple_graph\grman\widget.h
+	"grman.h"
+	<iostream>
+	<string>
+	<vector>
+	<algorithm>
+	<allegro.h>
+
+1523206857 source:c:\users\mathi\desktop\graph_lib_exemple_graph\graph_lib_exemple_graph\graph_lib_exemple_graph\grman\widget.cpp
+	"widget.h"
+
+1523224423 source:c:\users\mathi\desktop\graph_lib_exemple_graph\graph_lib_exemple_graph\graph_lib_exemple_graph\main.cpp
+	"grman/grman.h"
+	<iostream>
+	"graph.h"
+
+1523226447 c:\users\mathi\desktop\graph_lib_exemple_graph\graph_lib_exemple_graph\graph_lib_exemple_graph\graph.h
+	<vector>
+	<map>
+	<string>
+	<memory>
+	<fstream>
+	"grman/grman.h"
+
+1523227756 source:c:\users\mathi\desktop\graph_lib_exemple_graph\graph_lib_exemple_graph\graph_lib_exemple_graph\graph.cpp
+	"graph.h"
+
+1523227758 source:c:\users\mathi\desktop\maouchi_michaut_moloux\graph_lib_exemple_graph\graph_lib_exemple_graph\graph_lib_exemple_graph\graph.cpp
+	"graph.h"
+
+1523226448 c:\users\mathi\desktop\maouchi_michaut_moloux\graph_lib_exemple_graph\graph_lib_exemple_graph\graph_lib_exemple_graph\graph.h
+	<vector>
+	<map>
+	<string>
+	<memory>
+	<fstream>
+	"grman/grman.h"
+
+1523206858 c:\users\mathi\desktop\maouchi_michaut_moloux\graph_lib_exemple_graph\graph_lib_exemple_graph\graph_lib_exemple_graph\grman\grman.h
+	<allegro.h>
+	<string>
+	"grman_couleurs.h"
+	"coords.h"
+	"widget.h"
+
+1523206858 c:\users\mathi\desktop\maouchi_michaut_moloux\graph_lib_exemple_graph\graph_lib_exemple_graph\graph_lib_exemple_graph\grman\grman_couleurs.h
+
+1523206858 c:\users\mathi\desktop\maouchi_michaut_moloux\graph_lib_exemple_graph\graph_lib_exemple_graph\graph_lib_exemple_graph\grman\coords.h
+	<cmath>
+
+1523206860 c:\users\mathi\desktop\maouchi_michaut_moloux\graph_lib_exemple_graph\graph_lib_exemple_graph\graph_lib_exemple_graph\grman\widget.h
+	"grman.h"
+	<iostream>
+	<string>
+	<vector>
+	<algorithm>
+	<allegro.h>
+
+1523206858 source:c:\users\mathi\desktop\maouchi_michaut_moloux\graph_lib_exemple_graph\graph_lib_exemple_graph\graph_lib_exemple_graph\grman\coords.cpp
+	"coords.h"
+
+1523206858 source:c:\users\mathi\desktop\maouchi_michaut_moloux\graph_lib_exemple_graph\graph_lib_exemple_graph\graph_lib_exemple_graph\grman\grman.cpp
+	<cmath>
+	<unordered_map>
+	<unordered_set>
+	<utility>
+	<string>
+	<iostream>
+	<regex>
+	"grman.h"
+	<allegro.h>
+	<png.h>
+	<loadpng.h>
+	<jpgalleg.h>
+
+1523206858 source:c:\users\mathi\desktop\maouchi_michaut_moloux\graph_lib_exemple_graph\graph_lib_exemple_graph\graph_lib_exemple_graph\grman\widget.cpp
+	"widget.h"
+
+1523224424 source:c:\users\mathi\desktop\maouchi_michaut_moloux\graph_lib_exemple_graph\graph_lib_exemple_graph\graph_lib_exemple_graph\main.cpp
+	"grman/grman.h"
+	<iostream>
+	"graph.h"
+
+1523309783 source:c:\users\kipetrovitchy\desktop\maouchi_michaut_moloux\graph_lib_exemple_graph\graph_lib_exemple_graph\graph_lib_exemple_graph\graph.cpp
+	"graph.h"
+
+1523309035 c:\users\kipetrovitchy\desktop\maouchi_michaut_moloux\graph_lib_exemple_graph\graph_lib_exemple_graph\graph_lib_exemple_graph\graph.h
+	<vector>
+	<map>
+	<string>
+	<memory>
+	<fstream>
+	"grman/grman.h"
+
+1523206858 c:\users\kipetrovitchy\desktop\maouchi_michaut_moloux\graph_lib_exemple_graph\graph_lib_exemple_graph\graph_lib_exemple_graph\grman\grman.h
+	<allegro.h>
+	<string>
+	"grman_couleurs.h"
+	"coords.h"
+	"widget.h"
+
+1523206858 c:\users\kipetrovitchy\desktop\maouchi_michaut_moloux\graph_lib_exemple_graph\graph_lib_exemple_graph\graph_lib_exemple_graph\grman\grman_couleurs.h
+
+1523206858 c:\users\kipetrovitchy\desktop\maouchi_michaut_moloux\graph_lib_exemple_graph\graph_lib_exemple_graph\graph_lib_exemple_graph\grman\coords.h
+	<cmath>
+
+1523206860 c:\users\kipetrovitchy\desktop\maouchi_michaut_moloux\graph_lib_exemple_graph\graph_lib_exemple_graph\graph_lib_exemple_graph\grman\widget.h
+	"grman.h"
+	<iostream>
+	<string>
+	<vector>
+	<algorithm>
+	<allegro.h>
+
+1523206858 source:c:\users\kipetrovitchy\desktop\maouchi_michaut_moloux\graph_lib_exemple_graph\graph_lib_exemple_graph\graph_lib_exemple_graph\grman\coords.cpp
+	"coords.h"
+
+1523206858 source:c:\users\kipetrovitchy\desktop\maouchi_michaut_moloux\graph_lib_exemple_graph\graph_lib_exemple_graph\graph_lib_exemple_graph\grman\grman.cpp
+	<cmath>
+	<unordered_map>
+	<unordered_set>
+	<utility>
+	<string>
+	<iostream>
+	<regex>
+	"grman.h"
+	<allegro.h>
+	<png.h>
+	<loadpng.h>
+	<jpgalleg.h>
+
+1523206858 source:c:\users\kipetrovitchy\desktop\maouchi_michaut_moloux\graph_lib_exemple_graph\graph_lib_exemple_graph\graph_lib_exemple_graph\grman\widget.cpp
+	"widget.h"
+
+1523297748 source:c:\users\kipetrovitchy\desktop\maouchi_michaut_moloux\graph_lib_exemple_graph\graph_lib_exemple_graph\graph_lib_exemple_graph\main.cpp
+	"grman/grman.h"
+	<iostream>
+	<cstdio>
+	<ctime>
+	"graph.h"
+
+1523312893 source:c:\users\mathi\desktop\final-countdown\graph_lib_exemple_graph\grman\coords.cpp
+	"coords.h"
+
+1523312893 c:\users\mathi\desktop\final-countdown\graph_lib_exemple_graph\grman\coords.h
+	<cmath>
+
+1523312893 source:c:\users\mathi\desktop\final-countdown\graph_lib_exemple_graph\grman\grman.cpp
+	<cmath>
+	<unordered_map>
+	<unordered_set>
+	<utility>
+	<string>
+	<iostream>
+	<regex>
+	"grman.h"
+	<allegro.h>
+	<png.h>
+	<loadpng.h>
+	<jpgalleg.h>
+
+1523312893 c:\users\mathi\desktop\final-countdown\graph_lib_exemple_graph\grman\grman.h
+	<allegro.h>
+	<string>
+	"grman_couleurs.h"
+	"coords.h"
+	"widget.h"
+
+1523312893 c:\users\mathi\desktop\final-countdown\graph_lib_exemple_graph\grman\grman_couleurs.h
+
+1523312894 c:\users\mathi\desktop\final-countdown\graph_lib_exemple_graph\grman\widget.h
+	"grman.h"
+	<iostream>
+	<string>
+	<vector>
+	<algorithm>
+	<allegro.h>
+
+1523312894 source:c:\users\mathi\desktop\final-countdown\graph_lib_exemple_graph\grman\widget.cpp
+	"widget.h"
+
+1523312893 source:c:\users\mathi\desktop\final-countdown\graph_lib_exemple_graph\main.cpp
+	"grman/grman.h"
+	<iostream>
+	<cstdio>
+	<ctime>
+	"graph.h"
+
+1523312893 c:\users\mathi\desktop\final-countdown\graph_lib_exemple_graph\graph.h
+	<vector>
+	<map>
+	<string>
+	<memory>
+	<fstream>
+	"grman/grman.h"
+
